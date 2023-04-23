@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>数组扁平化</h1>
+    <div id="change">三维转一维</div>
+    <script>
+        let arr=[[1,[2,3],4],[5,[6,7],8,9]];
+        function fn(array){
+                //扩展运算符实现
+               /* while(arr.some(item=>Array.isArray(item))){
+                    
+                    arr=[].concat(...arr);
+                }*/
+                //递归
+                let ret=[];
+                arr.map((value)=>{
+                    if(Array.isArray(value)){
+                        ret=ret.concat(value)
+                    }else{
+                        ret.push(value);
+                    }
+                })
+            return ret;
+        }
+        console.log(fn(arr));
+        document.getElementById("change").innerHTML=arr;
+    </script>
+</body>
+</html>

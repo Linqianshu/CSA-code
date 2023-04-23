@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mypush</h1>
+    <p id="demo">创建函数Mypush</p>
+
+    <script>
+        function MyPush(arr,...args){
+            for(let i=0;i<args.length;i++){
+                arr[arr.length]=args[i];
+        }
+        return arr.length;
+    }
+    let arr=[1,2];
+    MyPush(arr,3,5,6,7,8,9,"hello world","nice");
+    console.log(arr);
+
+    document.getElementById("demo").innerHTML=arr;
+    </script>
+</body>
+</html>
