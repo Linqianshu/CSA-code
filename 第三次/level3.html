@@ -1,0 +1,42 @@
+<!--
+ * @Author: Linqianshu 2906823495@qq.com
+ * @Date: 2023-04-30 23:21:47
+ * @LastEditors: Linqianshu 2906823495@qq.com
+ * @LastEditTime: 2023-04-30 23:33:09
+ * @FilePath: \Code\第三次\level3.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a={name:"kk",
+                age:20,
+    }
+    function Copy(p,c){
+        var c=c||{}
+        for(let i in p){
+            if(typeof p[i]==="object"){
+                c[i]=p[i].constructor===Array?[]:{}
+                Copy(p[i],c[i])
+            }else{
+                c[i]=p[i]
+            }
+        }
+        return c;
+    }
+    a.school=["nanshan","CQUPT!"]
+    let b={}
+    b=Copy(a,b)
+    b.school.push("Computer")
+    console.log(b.school)
+    console.log(a.school)
+    </script>
+</body>
+</html>

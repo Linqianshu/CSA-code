@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let b={}
+        let a={name:"aaa",
+                age:20,
+                
+    }
+        function Copy(p){
+            let c={};
+            for(let i in p){
+                c[i]=a[i];
+            }
+            return c;
+        }
+       
+        a.school=["NanShan","cqupt"]
+        b=Copy(a);
+        console.log(b.age)
+        b.age=30
+        b.like="pingpang"
+        console.log(a.age)
+        console.log(a.like)
+        console.log(b.like)
+        
+        b.school.push("computer")
+        console.log(a.school)
+    </script>
+</body>
+</html>
